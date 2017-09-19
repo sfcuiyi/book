@@ -30,4 +30,17 @@ export class ContentComponent  {
 
 
 
+  //  obj = {
+  //     id:1,
+  //     title:'',
+  //     content:'',
+  //     price:'',
+  //     type:'',
+  //     commonts:[
+  //       {username:'',content:'',date:'',star:''},
+  //       {username:'',content:'',date:'',star:''}
+  //     ]
+  // }
+
+
 }
