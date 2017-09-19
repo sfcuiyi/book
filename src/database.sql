@@ -1,10 +1,13 @@
+drop database if exists book;
+create database book;
+use book;
 create table t_book(
     id int primary key auto_increment,
     title varchar(200),
     content varchar(200),
     price int,
     book_type varchar(200)
-);
+)engine=Innodb default charset=utf8;
 create table t_book_comment(
     id int primary key auto_increment,
     username varchar(200),
@@ -13,7 +16,7 @@ create table t_book_comment(
     content varchar(200),
     book_id int,
     foreign key (book_id) references t_book(id)
-);
+)engine=Innodb default charset=utf8;
 
 insert into t_book (title,content,price,book_type) 
 values 
