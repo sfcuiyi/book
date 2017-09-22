@@ -2,7 +2,7 @@
     <img src="http://placehold.it/320x150" alt="...">
     <div class="caption">
       <h4>
-        <a href="#">{{book.title}}</a>
+        <a routerLink="{{'/bookDetail/'+book.id}}">{{book.title}}</a>
         <span class="pull-right">{{ book.price | currency : 'USD' : true }}</span>
       </h4>
       <p>{{book.content}}</p>

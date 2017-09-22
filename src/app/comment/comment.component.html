@@ -1,11 +1,15 @@
-<div>
-    <app-item ></app-item>
-</div>
-<div>
-  <div>
-    <app-usercomment></app-usercomment>
-  </div>
-  <div>
-    <app-comment-item></app-comment-item>
-  </div>
+<div class="container">
+    <div>
+       
+        <app-item [book]="data"></app-item>
+    </div>
+    <div>
+      <div>
+        <app-usercomment></app-usercomment>
+      </div>
+      <div *ngFor="let c of data.comments">
+        <app-comment-item [item]="c"></app-comment-item>
+      </div>
+    </div>
+
 </div>

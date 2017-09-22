@@ -14,8 +14,9 @@ export class StarComponent  {
 
   //  在Angular第一次 展示 绑定的属性 并且 设置过 输入属性 之后被调用一次
   // 一般用于初始化属性的值
-  ngOnInit()
+  ngOnChanges()
   {
+    console.log(this.star);
     this.stars.fill(true,0,this.star).fill(false,this.star,5);
   }
 

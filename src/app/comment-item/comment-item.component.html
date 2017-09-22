@@ -1,13 +1,13 @@
 <div class="thumbnail">
     <div class="caption">
       <h4>
-        <a href="#">aaaaa</a>
-        <span class="pull-right">xxxx</span>
+        <a href="#">{{item.username}}</a>
+        <span class="pull-right">{{item.commentDate}}</span>
       </h4>
       
       <p>
-        <app-star [star]="3" ></app-star>
+        <app-star [star]="item.star" ></app-star>
       </p>
-      <p>asdasdasdadsasdad</p>
+      <p>{{item.content}}</p>
     </div>
   </div>

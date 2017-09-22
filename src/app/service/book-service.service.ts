@@ -21,7 +21,7 @@ export class BookServiceService {
 
   findBookDetail(id:number):Observable<any>
   {
-    return null;
+    return this.http.get(`/bms/findById?id=${id}`);
   }
 
 }
