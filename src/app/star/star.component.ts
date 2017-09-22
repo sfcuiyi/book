@@ -16,10 +16,7 @@ export class StarComponent  {
   // 一般用于初始化属性的值
   ngOnInit()
   {
-    console.log(this.star);
     this.stars.fill(true,0,this.star).fill(false,this.star,5);
-    //[true,true,true,false,false]
-    console.log(this.stars);
   }
 
 

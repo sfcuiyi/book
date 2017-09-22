@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BookServiceService, QueryParams } from '../service/book-service.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-content',
@@ -7,26 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent  {
 
-  books:Array<any> = [
-    {
-      "title":'bookTiele-1',
-      "price":300+parseInt(Math.random()*10+""),
-      "content":"this is a very good ",
-      "star":4
-    },
-    {
-      "title":'bookTiele-2',
-      "price":300+parseInt(Math.random()*10+""),
-      "content":"this is a very good ",
-      "star":5
-    },
-    {
-      "title":'bookTiele-3',
-      "price":300+parseInt(Math.random()*10+""),
-      "content":"this is a very good ",
-      "star":2
-    },
-  ];
+  books:Array<any>;
+
+  @Input()
+  contentParam:QueryParams;
+
+  constructor(private bookService:BookServiceService)
+  {
+    this.bookService.findBookList(new QueryParams())
+        .subscribe((data)=>{
+          this.books = data.json();
+        });
+    
+        console.log(this.contentParam);
+  }
+
+  ngOnChanges()
+  {
+    this.bookService.findBookList(this.contentParam)
+      .subscribe((data)=>{
+        this.books = data.json();
+      });
+
+  }
+
+  ngOnInit()
+  {
+    console.log("init==>",this.contentParam);
+  }
 
 
 

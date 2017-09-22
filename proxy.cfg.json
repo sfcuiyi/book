@@ -1,0 +1,6 @@
+{
+    "/bms":{
+        "target":"http://localhost",
+        "changeOrigin":true
+    }
+}
